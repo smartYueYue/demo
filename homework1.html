@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left,.right {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #df8793;
+            top:0;
+        }
+        .left {
+            left:0px;
+        }
+        .right {
+            right: 0px;
+        }
+        .center{
+            margin: 0 200px;
+            overflow: hidden;
+            background-color: tomato;
+            height: 200px;
+        }
+
+        .float {
+            height: 200px;
+        }
+        .left2 {
+            width: 200px;
+            height: 200px;
+            float: left;
+            background-color: #888;
+        }
+        .right2 {
+            width: 200px;
+            height: 200px;
+            float: right;
+            background-color: #888;
+        }
+        .center2 {
+            background-color: aqua;
+            height: 200px;
+            width: 100%;
+        }
+        .flex {
+            display: flex;
+        }
+        .right3 {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .center3 {
+            flex: 1;
+            background-color: bisque;
+        }
+        .left3 {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .table {
+            display: table;
+            height: 200px;
+            width: 100%;
+        }
+        .table>div {
+            display: table-cell;
+            height: 200px;
+        }
+        .left4 {
+            width: 200px;
+            background-color: blanchedalmond;
+        }
+        .right4 {
+            width: 200px;
+            background-color: blanchedalmond;
+        }
+        .center4 {
+            background-color: #df8793;
+        }
+        .grid {
+            display: grid;
+            width: 100%;
+            height: 200px;
+            grid-template-rows: 100%;
+            grid-template-columns: 200px auto 200px;
+        }
+        .left5 {
+            background-color: #888;
+        }
+        .right5 {
+            background-color: #888;
+        }
+        .center5 {
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class='left'></div>
+        <div class='right'></div>
+        <div class='center'>center
+            <p>优点：可随意变顺序</p>
+            <p>确定：要注意top位置</p>
+        </div>
+    </div>
+    <div>1.positon 定位</div>
+    <div class="float">
+        <div class="right2"></div>
+        <div class="left2"></div>
+        <div class="center2">
+            float
+            <p>优点：受外界影响小</p>
+            <p>缺点：center要放到最后写</p>
+        </div>
+    </div>
+    <div>2.float</div>
+    <div class="flex">
+        <div class="left3"></div>
+        <div class="center3">
+            flex
+            <p>优点：方便，不用再天天用float了</p>
+            <p>缺点：需要ie10以上</p>
+        </div>
+        <div class="right3"></div>
+    </div>
+    <div>3.flex</div>
+    <div class="table">
+        <div class="left4"></div>
+        <div class="center4">table布局
+            <p>现在基本不用table除非拿来做表格</p>
+            <p>缺点：table会阻挡浏览器渲染引擎的渲染顺序</p>
+        </div>
+        <div class="right4"></div>
+    </div>
+    <div>4.table</div>
+    <div class="grid">
+        <div class="left5"></div>
+        <div class="center5">grid网格布局
+            <p>优点：写法简单，css代码量少</p>
+            <p>缺点：新属性 支持率较低</p>
+        </div>
+        <div class="right5"></div>
+    </div>
+</body>
+</html>

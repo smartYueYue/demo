@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>纯css实现表单交互</title>
+  <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+  <form id="form">
+    <ol>
+      <li>
+        <label for="tel">Tel:</label>
+        <input type="tel" required name="" pattern="\d{11}" id="tel">
+      </li>
+      <li>
+        <label for="url">Website:</label>
+        <input type="url" required name="" id="url">
+      </li>
+      <li>
+        <label for="email">Email:</label>
+        <input type="email" required name="" id="email">
+      </li>
+      <li>
+        <label for="textarea">Email:</label>
+        <textarea form="form" required name="textarea" id="textarea" cols="20" rows="5"></textarea>
+      </li>
+      <li>
+        <label for="select">Select:</label>
+        <select form="form" required id="select">
+          <option value ="volvo">Volvo</option>
+          <option value ="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+      </li>
+      <li>
+        <label for="checkbox">Checkbox:</label>
+        <input required value="xxx" type="checkbox" name="" id="checkbox">xxx
+      </li>
+      <li>
+        <input type="submit" name="" value="Send the form">
+      </li>
+    </ol>
+  </form>
+</body>
+</html>

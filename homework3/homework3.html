@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 30px;
+            background: darkslategrey
+        }
+        .div2 {
+            margin-top: 100px;
+            width: 250px;
+            height: 250px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div title="拖拽我" draggable="true" class="list">列表1</div>
+    <div class="div2"></div>
+</body>
+<script>
+    let source = document.querySelector('.list');
+    let target = document.querySelector('.div2')
+    // list.ondragstart = function(e) {
+    //     console.log('源对象开始被拖动', e)
+    // }
+    // list.ondrag = function(e) {
+    //     console.log('源对象被拖动过程中', e)
+    // }
+    // list.ondragend = function(e) {
+    //     console.log('源对象被拖动结束', e)
+    // }
+
+    // target.ondragenter = function(e){
+    //     console.log('拖动进入目标元素');
+    // }
+    // target.ondragover = function(e){
+    //     console.log('目标元素中拖拽');
+    //     e.preventDefault();
+    // }
+    // target.ondragleave = function(e){
+    //     console.log('拖动离开目标元素');
+    // }
+    // target.ondrop = function(e){
+    //     console.log('拖放', e.clientY);
+    //     list.style.top = e.clientY + 'px';
+    //     list.style.left = e.clientX + 'px';
+    // }
+    // targetDrop(source, target)
+    // function targetDrop (source, target) {
+    //      target.ondragover = function(e){
+    //         console.log('目标元素中拖拽');
+    //         e.preventDefault();
+    //     }
+    //     target.ondrop = function(e){
+    //         console.log('拖放', e.clientY);
+    //         source.style.top = e.clientY + 'px';
+    //         source.style.left = e.clientX + 'px';
+    //     }
+    // }
+    function TargetDrop (source, target) {
+        this.config = {
+            target: target,
+            source: source
+        }
+        this.compatible();
+        
+    }
+    TargetDrop.prototype = {
+        bindEvent: function () {
+            var me = this
+            this.config.target.ondrop = function (e) {
+                me.config.source.style.top = e.clientY + 'px';
+                me.config.source.style.left = e.clientX + 'px';
+            }
+            this.config.target.ondragover = function(e){
+                console.log('目标元素中拖拽');
+                e.preventDefault();
+            }
+        },
+        touchEvent: function() {
+            var me = this
+            me.config.source.addEventListener('touchmove', function(e) {
+                console.log('move')
+                me.config.source.style.top = e.changedTouches[0].clientY + 'px';
+                me.config.source.style.left = e.changedTouches[0].clientX + 'px';
+            })
+            me.config.source.addEventListener('touchend', function(e) {
+                console.log('end', e.changedTouches[0].clientY, e.changedTouches[0].clientX)
+                if (100 < e.changedTouches[0].clientY && e.changedTouches[0].clientY < 350 && 0 < e.changedTouches[0].clientX && e.changedTouches[0].clientX < 250) {
+                    me.config.source.style.top = e.changedTouches[0].clientY + 'px';
+                    me.config.source.style.left = e.changedTouches[0].clientX + 'px';
+                } else {
+                    me.config.source.style.top = '0px'
+                    me.config.source.style.left = '0px'
+                }
+            })
+        },
+        compatible: function() {
+            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                // 移动端
+                this.touchEvent()
+            } else {
+                // pc端
+                this.bindEvent()
+            }
+        }
+    }
+    
+    let targetDrop = new TargetDrop(source, target);
+
+    targetDrop
+
+</script>
+</html>

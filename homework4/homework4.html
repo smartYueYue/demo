@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #main {
+            position: relative;
+        }
+        .box {
+            padding: 15px 0 0 15px;
+            float: left;
+            transition: all 2s;
+        }
+        .pic {
+            padding: 10px;
+        }
+        .pic img {
+            width: 165px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="box">
+            <div class="pic">
+                <img src="images/1.jpg" alt="123"/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/2.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/3.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/4.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/5.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/6.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/7.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/8.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/9.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/10.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/11.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/12.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/13.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/14.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/15.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/16.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/17.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/18.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="box">
+            <div class="pic">
+                <img src="images/19.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        let boxes = document.querySelector('.box')
+        waterfall('main', 'box');
+    }
+    window.onresize = function(){
+        waterfall('main', 'box');
+    }
+    function waterfall(parent, boxes) {
+        // 将main下的所有box元素取出来
+        let oParent = document.getElementById(parent);
+        let oBox = document.getElementsByClassName(boxes);
+        console.log(oParent, oBox)
+        // 计算页面显示列数
+        var oBoxW = oBox[0].offsetWidth;
+        var cols = Math.floor(document.documentElement.clientWidth/oBoxW)
+        // 设置main的宽
+        oParent.style.cssText = 'width:' + oBoxW * cols + 'px; margin: 0 auto';
+        let hArr = [];
+        for (let i = 0; i < oBox.length; i++) {
+            if (i < cols) {
+                console.log(oBox[i].offsetHeight)
+                hArr.push(oBox[i].offsetHeight)
+                oBox[i].style.position = 'absolute'
+                oBox[i].style.top = '0px';
+                oBox[i].style.left = (i)*200 + 'px';
+            } else {
+                let minH = Math.min.apply(null, hArr);
+                let minW = getMinhIndex(hArr, minH);
+                oBox[i].style.position = 'absolute'
+                oBox[i].style.top = minH + 'px';
+                oBox[i].style.left = (Number(minW))*200 + 'px';
+                hArr[minW] = hArr[minW] + oBox[i].offsetHeight;
+                console.log(hArr)
+            }
+        }
+    }
+    function getMinhIndex(arr, value) {
+        for (var i in arr) {
+            if (arr[i] === value) {
+                return i
+            }
+        }
+    }
+</script>
+</html>

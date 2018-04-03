@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://at.alicdn.com/t/font_614267_dz26divbrshv9529.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 50px; 
+           height: 50px;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+        .icon-back {
+            width: 50px; 
+            height: 50px;
+            background-color: #ddd;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+        }
+        .icon-font {
+            width: 50px; 
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #fff;
+            backface-visibility: hidden;
+        }
+        .icon-item {
+            float: left;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 0px #ddd;
+            position: relative;
+            width: 50px; 
+            height: 50px;
+            transition: 1s; transform-style: preserve-3d;
+        }
+        /* .icon-item:hover {
+            transform: rotateY(180deg);
+        } */
+        .main {
+            width: 290px;
+            margin: 100px auto;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jitui"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-bangbangtang"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jitui"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-mingmenjuan"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fantuan"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-mingmenjuan"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-niunai"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-hebaodan"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dangao"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-niunai"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-hebaodan"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-hanbao"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+       
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fantuan"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-hanbao"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dangao"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+        <div class="icon-item">
+            <div class="icon-font">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-bangbangtang"></use>
+                </svg>
+            </div>
+            <div class="icon-back"></div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+<script>
+    let items = document.getElementsByClassName('icon-item')
+    console.log(items)
+    items.onclick = function(e) {
+        console.log(e)
+        iconItem.style.transform = 'rotateY(180deg)'
+    }
+    let num = 0;
+    let firstIcon = '';
+    let secondIcon = '';
+    let firstId = '';
+    let secondId = '';
+    for (let i = 0; i < items.length; i++) {
+        items[i].onclick = function(e) {
+            // debugger
+            if (e.path[0].className === 'icon-back') {
+                return
+            }
+            num ++;
+            console.log(e)
+            // console.log(e.path[0].children[0].href.baseVal)
+            // debugger
+            let label = e.path[0].children[0] ? e.path[0].children[0].href.baseVal : e.path[1].children[0].href.baseVal
+            console.log(label)
+            items[i].style.transform = 'rotateY(180deg)'
+            if (num === 1) {
+                firstIcon = label;
+                firstId = i;
+            }
+            if (num === 2) {
+                secondIcon = label;
+                secondId = i;
+                if (firstIcon === secondIcon) {
+                    
+                } else {
+                    items[firstId].style.transform = 'rotateY(0deg)'
+                    items[secondId].style.transform = 'rotateY(0deg)'
+                }
+                num = 0;
+                firstIcon = '';
+                secondIcon = '';
+                firstId = '';
+                secondId = '';
+            }
+            items = Array.from(items)
+            let result = items.every(function(item, index, array) {
+                console.log(item.style.transform)
+                return (item.style.transform === "rotateY(180deg)")
+                // console.log(item, index, array)
+            })
+            console.log(items)
+            console.log(result)
+            if (result) {
+                alert('success')
+            }
+        }
+    }
+</script>
+</html>
